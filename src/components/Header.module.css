@@ -1,0 +1,24 @@
+.header {
+    background: var(--gray-700);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: var(--blue);
+    line-height: 48px;
+}
+
+.halfColor{
+    color: var(--purple-dark)
+}
+
+img {
+    margin-right: 12px;
+    height: 2.25rem;
+    
+}
+
