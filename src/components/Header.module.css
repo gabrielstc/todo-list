@@ -16,7 +16,7 @@
     color: var(--purple-dark)
 }
 
-img {
+.header img {
     margin-right: 12px;
     height: 2.25rem;
     

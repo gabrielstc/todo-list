@@ -32,3 +32,72 @@
     border: 0px;
     font-weight: 700;
 }
+
+.tasksList {
+  display: flex;
+  flex-direction: column;
+  width: 736px;
+  min-height: 287px;
+  margin-top: 64px;
+}
+
+.tasksInfo {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  line-height: 15px;
+}
+
+.taskListContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  min-height: 287px;
+}
+
+.clipBoardIcon {
+  margin-bottom: 16px;
+  justify-content: center;
+}
+
+.noContent {
+  color: var(--gray-300);
+  line-height: 140%;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.noContent span {
+  font-weight: 400;
+}
+
+.tasksCreated {
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.tasksCompleted {
+  color: var(--purple);
+  font-weight: 700;
+}
+
+.tasksCreated, .tasksCompleted {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tasksInfo span {
+  background-color: var(--gray-400);
+  color: var(--gray-200);
+  border-radius: 999px;
+  min-width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 16px;
+  height: 19px;
+  padding: 2px 8px;
+}
