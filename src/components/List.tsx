@@ -3,6 +3,7 @@ import clipboard from "../assets/clipboard.svg";
 import { v4 as uuidv4 } from "uuid";
 import { useState } from "react";
 import { NoContent } from "./NoContent";
+import { ListContent } from "./ListContent";
 // interface TaskType {
 //   id: string;
 //   title: string;
@@ -78,9 +79,7 @@ export function List() {
           <NoContent />
         ) : (
           tasks.map((task) => (
-            <div className={styles.taskListContainer}>
-              <p>{task.title}</p>
-            </div>
+            <ListContent key={task.id} title={task.title} isComplete={task.isComplete} id={task.id}/>
           ))
         )}
       </div>

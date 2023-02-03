@@ -1,0 +1,58 @@
+.taskContainer {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background-color: var(--gray-500);
+  border: 1px solid var(--gray-400);
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+  border-radius: 8px;
+  min-width: 736px;
+  min-height: 56px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+.taskContainer p {
+  color: var(--gray-100);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 140%;
+  margin-left: 16px;
+  width: 632px;
+  height: 40px;
+}
+
+.checkBox {
+  display: none;
+}
+
+.radio {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #4ea8de;
+  display: inline-block;
+  position: relative;
+}
+
+input[type="radio"]:checked + label .radio::before {
+  content: "\2713";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 14px;
+  color: #fff;
+}
+
+input[type="radio"]:checked + label .radio {
+  background-color: #5e60ce;
+  border-color: #5e60ce;
+}
+
+.trashIcon {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+}
