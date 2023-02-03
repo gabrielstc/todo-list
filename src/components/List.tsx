@@ -53,11 +53,48 @@ const TASKS = [
 
 export function List() {
   const [tasks, setTasks] = useState<TaskType[]>(TASKS);
+  const [newTaskText, setNewTaskText] = useState<string>("");
+
+  const completeTask = (id: string) => {
+    const newTasks = tasks.map((task) => {
+      if (task.id === id) {
+        return { ...task, isComplete: !task.isComplete };
+      }
+      return task;
+    });
+    setTasks(newTasks);
+  }
+
+  const deleteTask = (id: string) => {
+    const newTasks = tasks.filter((task) => task.id !== id);
+    setTasks(newTasks);
+  }
+      
+  const handleCreateNewTask = (event: React.FormEvent) => {
+    event.preventDefault();
+    if (newTaskText.trim() === "") {
+      return;
+    }
+    const newTask = {
+      id: uuidv4(),
+      title: newTaskText,
+      isComplete: false,
+    };
+    setTasks([...tasks, newTask]);
+    setNewTaskText("");
+  };
+  const handleNewTaskChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setNewTaskText(event.target.value);
+  };
   return (
     <div>
       <div className={styles.newTask}>
-        <form>
-          <input placeholder="Adicione uma nova tarefa"></input>
+        <form onSubmit={handleCreateNewTask}>
+          <input
+            placeholder="Adicione uma nova tarefa"
+            value={newTaskText}
+            onChange={handleNewTaskChange}
+          ></input>
           <button>Criar +</button>
         </form>
       </div>
@@ -79,7 +116,14 @@ export function List() {
           <NoContent />
         ) : (
           tasks.map((task) => (
-            <ListContent key={task.id} title={task.title} isComplete={task.isComplete} id={task.id}/>
+            <ListContent
+              key={task.id}
+              title={task.title}
+              isComplete={task.isComplete}
+              id={task.id}
+              onCompleteTask={completeTask}
+              onDeleteTask={deleteTask}
+            />
           ))
         )}
       </div>

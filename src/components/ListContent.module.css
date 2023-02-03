@@ -14,7 +14,6 @@
 }
 
 .taskContainer p {
-  color: var(--gray-100);
   font-weight: 400;
   font-size: 1rem;
   line-height: 140%;
@@ -34,6 +33,7 @@
   border: 2px solid #4ea8de;
   display: inline-block;
   position: relative;
+  cursor: pointer;
 }
 
 input[type="radio"]:checked + label .radio::before {
@@ -44,6 +44,7 @@ input[type="radio"]:checked + label .radio::before {
   transform: translate(-50%, -50%);
   font-size: 14px;
   color: #fff;
+  
 }
 
 input[type="radio"]:checked + label .radio {
@@ -56,3 +57,9 @@ input[type="radio"]:checked + label .radio {
   height: 24px;
   cursor: pointer;
 }
+
+
+.striked {
+    text-decoration: line-through;
+    color: var(--gray-300)
+  }

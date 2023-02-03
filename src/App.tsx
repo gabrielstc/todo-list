@@ -7,9 +7,11 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <main>
       <div className={styles.wrapper}>
         <List />
       </div>
+      </main>
     </div>
   );
 }
