@@ -13,15 +13,13 @@ export function ListContent({
   isComplete,
   id,
   onCompleteTask,
-  onDeleteTask
+  onDeleteTask,
 }: ListContentProps) {
   const handleCompleteTaskButton = () => {
-
     onCompleteTask(id);
   };
 
   const handleDeleteTaskButton = () => {
-
     onDeleteTask(id);
   };
   return (
@@ -37,8 +35,12 @@ export function ListContent({
       </label>
 
       <p className={isComplete ? styles.striked : ""}>{title}</p>
-
-      <img className={styles.trashIcon} src={trashIcon} alt="trash icon" onClick={handleDeleteTaskButton}/>
+      <span
+        className={styles.trashIcon + " material-symbols-outlined"}
+        onClick={handleDeleteTaskButton}
+      >
+        delete
+      </span>
     </div>
   );
 }

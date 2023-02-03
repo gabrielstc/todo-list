@@ -44,7 +44,6 @@ input[type="radio"]:checked + label .radio::before {
   transform: translate(-50%, -50%);
   font-size: 14px;
   color: #fff;
-  
 }
 
 input[type="radio"]:checked + label .radio {
@@ -53,13 +52,25 @@ input[type="radio"]:checked + label .radio {
 }
 
 .trashIcon {
-  width: 24px;
-  height: 24px;
+  display: flex;
+  width: 26px;
+  height: 26px;
   cursor: pointer;
+  color: var(--gray-300);
+  align-items: center;
+  justify-content: center;
 }
 
+.trashIcon:hover {
+    
+  width: 26px;
+  height: 26px;
+  background-color: var(--gray-400);
+  color: var(--danger);
+  border-radius: 8px;
+}
 
 .striked {
-    text-decoration: line-through;
-    color: var(--gray-300)
-  }
+  text-decoration: line-through;
+  color: var(--gray-300);
+}

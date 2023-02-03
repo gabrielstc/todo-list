@@ -88,7 +88,7 @@ export function List() {
   };
   return (
     <div>
-      <div className={styles.newTask}>
+      <div className={styles.newTaskForm}>
         <form onSubmit={handleCreateNewTask}>
           <input
             placeholder="Adicione uma nova tarefa"
@@ -109,6 +109,7 @@ export function List() {
               {tasks.length > 0
                 ? tasks.filter((task) => task.isComplete).length
                 : 0}
+                {" "} de {tasks.length}
             </span>
           </p>
         </div>
